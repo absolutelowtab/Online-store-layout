@@ -1,0 +1,89 @@
+.bank-main {
+    padding: 2rem 5%;
+    background: var(--dark);
+    min-height: 100vh;
+}
+
+.balance-card {
+    background: var(--light-dark);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.balance-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent 25%,
+        rgba(255, 0, 0, 0.05) 45%,
+        transparent 70%
+    );
+    animation: currency-flow 20s infinite linear;
+}
+
+@keyframes currency-flow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.balance-amount {
+    font-size: 3.5rem;
+    margin: 1.5rem 0;
+    color: var(--primary);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.quick-transfer {
+    background: var(--light-dark);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+}
+
+.ardor-input {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: var(--dark);
+    border: 2px solid var(--gray);
+    color: white;
+    border-radius: 8px;
+}
+
+.transaction-history {
+    margin-top: 3rem;
+}
+
+.transactions-list {
+    border: 2px solid var(--light-dark);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: var(--dark);
+    border-radius: 8px;
+}
+
+.bank-modal .modal-content {
+    /* display: none; */
+    max-width: 500px;
+    background: var(--light-dark);
+    border: 2px solid var(--primary);
+}
+
+.confirm-btn {
+    margin-top: 1.5rem;
+    width: 100%;
+}
